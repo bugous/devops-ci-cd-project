@@ -14,3 +14,9 @@ jobs:
 
       - name: Rodando um teste simples
         run: echo "CI funcionando com sucesso!"
+
+      - name: Notificar no Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+          -d "{\"content\": \"✅ CI executado com sucesso no projeto!\"}" \
+          ${{ secrets.DISCORD_WEBHOOK }}
