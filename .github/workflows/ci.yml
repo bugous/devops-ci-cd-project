@@ -20,3 +20,6 @@ jobs:
           curl -H "Content-Type: application/json" \
           -d "{\"content\": \"✅ CI executado com sucesso no projeto!\"}" \
           ${{ secrets.DISCORD_WEBHOOK }}
+
+      - name: Rodar testes
+        run: node test.js
